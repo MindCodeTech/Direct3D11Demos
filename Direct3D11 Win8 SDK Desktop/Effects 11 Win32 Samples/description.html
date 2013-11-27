@@ -1,0 +1,287 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:ImageSprite,0:Header.NonMtps,1:LinkList;/Areas/Centers/Themes/Msdn/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=991548924ACDE598A6CD2EE12DE08F79" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/c7d2a7b0-7528-45b7-ab4f-1b2d6f9508f6Combined.css,0:ImageSprite,0:Footer.NonMtps,1:LinkList;/Areas/Centers/Themes/Msdn/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=F66666867F6FADB76EC910ED597D6895" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Effects 11 Win32 Samples</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>Effects 11 Win32 Samples</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            Win32, DirectX, DirectX SDK
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Graphics and 3D
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Desktop
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Last updated</label>
+                    <div id="LastUpdated">9/16/2013</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">MS-LPL</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/Effects-11-Win32-Samples-cce82a4d">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<p>This is the DirectX SDK's BasicHLSL10, DynamicShaderLinkageFX11, and FixedFuncEMU samples updated to use Visual Studio 2012 and the Windows SDK 8.0 without any dependencies on legacy DirectX SDK content. These are samples Win32 desktop DirectX 11.0 applications
+ for Windows 8, Windows 7, and Windows Vista Service Pack 2 with the DirectX 11.0 runtime.&nbsp;</p>
+<p><strong>This is based on the the legacy DirectX SDK (June 2010) Win32 desktop samples running on Windows Vista, Windows 7, and Windows 8. This is not intended for use with Windows Store apps or Windows RT.</strong></p>
+<h1><span style="font-size:20px; font-weight:bold">Description</span></h1>
+<p>These samples use the&nbsp;<a href="http://go.microsoft.com/fwlink/?LinkId=320437">DXUT for Direct3D 11</a>&nbsp;framework and the
+<a href="http://go.microsoft.com/fwlink/p/?LinkId=271568">Effects 11 library</a> for Win32 desktop applications.</p>
+<h2>BasicHLSLFX11</h2>
+<p><img id="96126" src="description/BasicHLSL.jpg" alt="" width="90" height="71"></p>
+<p>This sample loads a mesh, create vertex and pixel shaders from files, and then uses the shaders to render the mesh.</p>
+<p><em>This is a Direct3D 11 version of the Direct3D 10 BasicHLSL10 sample. <a href="http://code.msdn.microsoft.com/Basic-DXUT-Win32-Samples-e59c0682">
+BasicHLSL11</a> is a version of the same sample that does not make use of Effects 11.</em></p>
+<h3>DynamicShaderLinkageFX11</h3>
+<p><img id="96131" src="description/DynamicShaderLinkageFX11.jpg" alt="" width="116" height="91"></p>
+<p>This Direct3D 11 sample demonstrates use of Shader Model 5 shader interfaces and Direct3D 11 support for linking shader interface methods at runtime.</p>
+<p><em>This is an Effects 11 version of the Direct3D 11 sample <a href="http://code.msdn.microsoft.com/Dynamic-Shader-Linkage-504eda2d">
+DynamicShaderLinkage11</a>.</em>&nbsp;</p>
+<h2>FixedFuncEMUFX11</h2>
+<h2><img id="96132" src="description/ffemu.jpg" alt="" width="200" height="150"></h2>
+<p>This sample attempts to emulate certain aspects of the Direct3D 9 fixed function pipeline in a Direct3D 11 environment.</p>
+<p><em>This is a Direct3D 11 version of the Direct3D 10 FixedFuncEMU sample.</em></p>
+<h3>How the&nbsp;sample works</h3>
+<ul>
+<li>This sample attempts to emulate the following aspects of the Direct3D 9 fixed-function pipeline:
+</li><li>Fixed-function Transformation Pipeline </li><li>Fixed-function Lighting Pipeline </li><li>AlphaTest </li><li>User Clip Planes </li><li>Pixel Fog </li><li>Gouraud and Flat shade modes </li><li>Projected texture lookups (texldp) </li><li>Multi-Texturing </li><li>D3DFILL_POINT fillmode </li><li>Screen space UI rendering </li></ul>
+<h4>Fixed-function Transformation Pipeline</h4>
+<p>The Direct3D 9 fixed-function transformation pipeline required 3 matrices to transform the raw points in 3d space into their 2d screen representations. These were the World, View, and Projection matrices. Instead of using SetTransform( D3DTS_WORLD, someMatrix
+ ), we pass the matrices in as effect variables. The shader multiplies the input vertex positions by each of the World, View, and Projection matrices to get the same transformation that would have been produced by the fixed-function pipeline.</p>
+<pre style="padding-left:30px">//output our final position in clipspace<br>float4 worldPos = mul( float4( input.pos, 1 ), g_mWorld );<br>float4 cameraPos = mul( worldPos, g_mView ); //Save cameraPos for fog calculations<br>output.pos = mul( cameraPos, g_mProj );</pre>
+<h4>Fixed-function Lighting Pipeline</h4>
+<pre style="padding-left:30px">ColorsOutput CalcLighting( float3 worldNormal, float3 worldPos, float3 cameraPos )<br>{<br>&nbsp;&nbsp;&nbsp; ColorsOutput output = (ColorsOutput)0.0;<br>&nbsp;&nbsp;&nbsp; <br>&nbsp;&nbsp;&nbsp; for(int i=0; i&lt;8; i&#43;&#43;)<br>&nbsp;&nbsp;&nbsp; {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; float3 toLight = g_lights[i].Position.xyz - worldPos;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; float lightDist = length( toLight );<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; float fAtten = 1.0/dot( g_lights[i].Atten, float4(1,lightDist,lightDist*lightDist,0) );<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; float3 lightDir = normalize( toLight );<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; float3 halfAngle = normalize( normalize(-cameraPos) &#43; lightDir );<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; output.Diffuse &#43;= max(0,dot( lightDir, worldNormal ) * g_lights[i].Diffuse * fAtten) &#43; g_lights[i].Ambient;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; output.Specular &#43;= max(0,pow( dot( halfAngle, worldNormal ), 64 ) * g_lights[i].Specular * fAtten );<br>&nbsp;&nbsp;&nbsp; }<br>&nbsp;&nbsp;&nbsp; <br>&nbsp;&nbsp;&nbsp; return output;<br>}</pre>
+<h4>AlphaTest</h4>
+<p>Alpha test is perhaps the simplest Direct3D 9 functionality to emulate. It does not require the user to set a alpha blend state. Instead the user can simply choose to discard a pixel based upon its alpha value. The following pixel shader does not draw the
+ pixel if the alpha value is less than 0.5.</p>
+<pre style="padding-left:30px">//<br>// PS for rendering with alpha test<br>//<br>float4 PSAlphaTestmain(PSSceneIn input) : COLOR0<br>{&nbsp;<br>&nbsp;float4 color =&nbsp; tex2D( g_samLinear, g_txDiffuse, input.tex ) * input.colorD;<br>&nbsp;if( color.a &lt; 0.5 )<br>&nbsp;&nbsp;discard;<br>&nbsp;return color;<br>}</pre>
+<h4>User Clip Planes</h4>
+<p>User Clip Planes are emulated by specifying a clip distance output from the Vertex Shader with the SV_ClipDistance[n] flag, where n is either 0 or 1. Each component can hold up to 4 clip distances in x, y, z, and w giving a total of 8 clip distances.</p>
+<p>In this scenario, each clip planes is defined by a plane equation of the form: Ax&#43;By&#43;Cz&#43;D=0</p>
+<p>Where &lt;A,B,C&gt; is the normal of the plane, and D is the distance of the plane from the origin. Plugging in any point &lt;x,y,z&gt; into this equation gives its distance from the plane. Therefore, all points &lt;x,y,z&gt; that satisfy the equation Ax
+ &#43; By &#43; Cz &#43; D = 0 are on the plane. All points that satisfy Ax &#43; By &#43; Cz &#43; D &lt; 0 are below the plane. All points that satisfy Ax &#43; By &#43; Cz &#43; D &gt; 0 are above the plane.</p>
+<p>In the Vertex Shader, each vertex is tested against each plane equation to produce a distance to the clip plane. Each of the three clip distances are stored in the first three components of the output component with the semantic SV_ClipDistance0. These clip
+ distances get interpolated over the triangle during rasterization and clipped if the value every goes below 0.</p>
+<h4>Pixel Fog</h4>
+<p>Pixel fog uses a fog factor to determine how much a pixel is obscured by fog. In order to accurately calculate the fog factor, we must have the distance from the eye to the pixel being rendered. In Direct3D 9, this was approximated by using the Z-coordinate
+ of a point that has been transformed by both the World and View matrices. In the vertex shader, this distance is stored in the fogDist member of the PSSceneIn struct for all 3 vertices of a triangle. It is then interpolated across the triangle during rasterization
+ and passed to the pixel shader.</p>
+<p>The pixel shader takes this fogDist value and passes it to the CalcFogFactor function which calculates the fog factor based upon the current value of g_fogMode.</p>
+<pre style="padding-left:30px">//<br>// Calculates fog factor based upon distance<br>//<br>// E is defined as the base of the natural logarithm (2.71828)<br>float CalcFogFactor( float d )<br>{<br>&nbsp;float fogCoeff = 1.0;<br>&nbsp;<br>&nbsp;if( FOGMODE_LINEAR == g_fogMode )<br>&nbsp;{<br>&nbsp;&nbsp;fogCoeff = (g_fogEnd - d)/(g_fogEnd - g_fogStart);<br>&nbsp;}<br>&nbsp;else if( FOGMODE_EXP == g_fogMode )<br>&nbsp;{<br>&nbsp;&nbsp;fogCoeff = 1.0 / pow( E, d*g_fogDensity );<br>&nbsp;}<br>&nbsp;else if( FOGMODE_EXP2 == g_fogMode )<br>&nbsp;{<br>&nbsp;&nbsp;fogCoeff = 1.0 / pow( E, d*d*g_fogDensity*g_fogDensity );<br>&nbsp;}<br>&nbsp;<br>&nbsp;return clamp( fogCoeff, 0, 1 );<br>}</pre>
+<p>Finally, the pixel shader uses the fog factor to determine how much of the original color and how much of the fog color to output to the pixel.</p>
+<pre style="padding-left:30px">return fog * normalColor &#43; (1.0 - fog)*g_fogColor;</pre>
+<h4><br>
+Gouraud and Flat shade modes</h4>
+<p>Gouraud shading involves calculating the color at the vertex of each triangle and interpolating it over the face of the triangle. By default Direct3D 11 uses D3D11_INTERPOLATION_MODE D3D11_INTERPOLATION_LINEAR to interpolate values over the face of a triangle
+ during rasterization. Because of this, we can emulate Gouraud shading by calculating the lighting using Lambertian lighting ( dot( Normal, LightDir ) ) at each vertex and letting Direct3D 11 interpolate these values for us. By the time the color gets to the
+ pixel shader, we simply use it as our lighting value and pass it through. No further work is needed.</p>
+<p>Direct3D 11 also provides another way to interpolate data across a triangle, D3D11_INTERPOLATION_CONST. A naive approach would be to use this to calculate the color at the first vertex and allow that color to be spread across the entire face during rasterization.
+ However, there is a problem with using this approach. Consider the case where the same sphere mesh needs to be rendered in both Gouraud and Flat shaded modes. To give the illusion of a faceted mesh being smooth, the normals at the vertices are averages of
+ the normals of the adjacent faces. In short, on a sphere, no vertex will have a normal that is exactly perpendicular to any face it is a part of. For Gouraud shading, this is intentional. This is what allows the sphere to look smooth even though it is comprised
+ of a finite number of polygons. However, for flat shading, this will give ill results.</p>
+<p>D3D11_INTERPOLATION_CONST takes the value of the color calculated at the first vertex and spreads it across the entire triangle giving us shading that looks as if the normal was bent compared to the orientation of the triangle. A better method using the
+ geometry shader to calculate the normal.</p>
+<p>The second method gives more accurate results. The following code snippet illustrates how the geometry shader constructs a normal from the input world positions (wPos) of the triangle vertices. The lighting value is then calculated from this normal and spread
+ to all vertices of the triangle.</p>
+<pre style="padding-left:30px">//<br>// Calculate the face normal<br>//<br>float3 faceEdgeA = input[1].wPos - input[0].wPos;<br>float3 faceEdgeB = input[2].wPos - input[0].wPos;</pre>
+<pre style="padding-left:30px">//<br>// Cross product<br>//<br>float3 faceNormal = cross(faceEdgeA, faceEdgeB);</pre>
+<h4>Projected Texture Lookups</h4>
+<p>Projected texturing simply divides the &lt;x,y,z&gt; coordinates of a 4d texture coordinate by the w coordinate before using it in a texture lookup operation. However, without the discussion of projected texturing, it becomes unclear why this functionality
+ is useful.</p>
+<p>Projecting a texture onto a surface can be easily illustrated by imagining how a projector works. The projector projects an image onto anything that happens to be in front of the projector. The same effect could be taken care of in the fixed-function pipeline
+ by carefully setting up texture coordinate generation and texture stage states. In Direct3D 11, it is handled in shaders.</p>
+<p>To tackle projected texturing, we must think about the problem in reverse. Instead of projecting a texture onto geometry, we simply render the geometry, and for each point, determine where that point would be hit by the projector texture. To do this, we
+ only need to know the position of the point in world space as well as the view and projection matrices of the projector.</p>
+<p>By multiplying the world space coordinate by the view and projection matrices of the light, we now have a point that is in the space of the projection of the light. Unfortunately, because we are converting this to texture coordinates, we would really like
+ this point in some sort of [0..1] range. This is where the w coordinate comes into play. After the projection into the projector space, the w coordinate can be thought of as how much this vertex was scaled from a [-1..1] range to get to its current position.
+ To get back to this [-1..1] range, we simply divide by the w coordinate. However, the projected texture is in the [0..1] range, so we must bias the result by halving it and adding 0.5.</p>
+<pre style="padding-left:30px">//calculate the projected texture coordinate for the current world position<br>float4 cookieCoord = mul( float4(input.wPos,1), g_mLightViewProj );</pre>
+<pre style="padding-left:30px">//since we don't have texldp, we must perform the w divide ourselves befor the texture lookup<br>cookieCoord.xy = 0.5 * cookieCoord.xy / cookieCoord.w &#43; float2( 0.5, 0.5 );</pre>
+<h4>Multi-Texturing</h4>
+<p>The texture stages from the fixed-function pipeline are officially gone. In there place is the ability to load textures arbitrarily in the pixel shader and to combine them in any way that the math operations of the language allow. The FixedFuncEMU sample
+ emulates the D3DTOP_ADD texture blending operation. The first color is loaded from the diffuse texture at the texture coordinates defined in the mesh and multiplied by the input color.</p>
+<pre style="padding-left:30px">float4 normalColor = tex2D( g_samLinear, g_txDiffuse, input.tex ) * input.colorD &#43; input.colorS;</pre>
+<p>The second color is loaded from the projected texture using the projected coordinates described above.</p>
+<pre style="padding-left:30px">cookieColor = tex2D( g_samLinear, g_txProjected, cookieCoord.xy );</pre>
+<p>D3DTOP_ADD is simply emulated by adding the projected cookie texture to the normal texture color</p>
+<pre style="padding-left:30px">normalColor &#43;= cookieColor;</pre>
+<p>For D3DTOP_MODULATE, the shader would simply multiply the colors together instead of adding them. The effects file can also be extended to handle traditional lightmapping pipeline by passing a second set of texture coordinates stored in the mesh all the
+ way down the pixel shader. The shader would then lookup into a lightmap texture using the second set of texture coordinates instead of the projected coordinates.</p>
+<h4>Screen space UI rendering</h4>
+<p>Rendering objects in screen space in Direct3D 11 requires that the user scale and bias the input screen coordinates against the viewport size. For example, a screen space coordinate in the range of &lt;[0..639],[0..479]&gt; needs to be transformed into the
+ range of &lt;[-1..1],[-1..1]&gt;. So that it can be transformed back by the viewport transform.</p>
+<p>The vertex shader code below performs this transformation. Note that the w coordinate of the position is explicitly set to 1. This ensures that the coordinates will remain the same when the w-divide occurs. Additionally, the Z position is passed into the
+ shader in clip-space, meaning that it is in the [0..1] range, where 0 represents the near plane, and 1 represents the far plane.</p>
+<pre style="padding-left:30px">//output our final position<br>output.pos.x = (input.pos.x / (g_viewportWidth/2.0)) -1;<br>output.pos.y = -(input.pos.y / (g_viewportHeight/2.0)) &#43;1;<br>output.pos.z = input.pos.z;<br>output.pos.w = 1;</pre>
+<h4>D3DFILL_POINT fillmode</h4>
+<p>The emulation of point fillmode requires the use of the geometry shader to turn one triangle of 3 vertices into 6 triangles of 12 vertices. For each vertex of the input triangle, the geometry shader emits 4 vertices that comprise a two-triangle strip at
+ that position. The positions of these vertices are displaced such that the screen-space size in pixels is equal to the g_pointSize variable.</p>
+<p>This sample does not show how to emulate point sprite functionality, which is closely related to point rendering.</p>
+<h1>Dependancies</h1>
+<p>DXUT-based samples typically make use of runtime HLSL compilation. Build-time compilation is recommended for all production Direct3D applications, but for experimentation and samples development runtime HLSL compiliation is preferred. The Effects 11 library
+ also needs to make use of shader reflection APIs at runtime. Therefore, the D3DCompile*.DLL must be available in the search path when these programs are executed.</p>
+<ul>
+<li>When using the Windows 8.x SDK and targeting Windows Vista or later, you can include the D3DCompile_46 or D3DCompile_47 DLL side-by-side with your application copying the file from the REDIST folder.
+</li></ul>
+<pre style="padding-left:60px">%ProgramFiles(x86)%\Windows kits\8.0\Redist\D3D\arm, x86 or x64</pre>
+<pre style="padding-left:60px">%ProgramFiles(x86)%\Windows kits\8.1\Redist\D3D\arm, x86 or x64</pre>
+<h1>Building with Visual Studio 2010</h1>
+<p>The code in these samples can be built using Visual Studio 2010 rather than Visual Studio 2012. The changes required are:</p>
+<ul>
+<li>Change the Platform Toolset to &quot;v100&quot; </li><li>Obtain the <a href="http://msdn.microsoft.com/en-us/windows/hardware/hh852363">
+Windows SDK 8.0</a> </li><li>Use the <a href="http://blogs.msdn.com/b/vcblog/archive/2012/11/23/using-the-windows-8-sdk-with-visual-studio-2010-configuring-multiple-projects.aspx">
+instructions </a>for adding the Windows 8.0 SDK headers for VS 2010 projects </li></ul>
+<h1>More Information</h1>
+<p><a href="http://blogs.msdn.com/b/chuckw/archive/2012/03/22/where-is-the-directx-sdk.aspx">Where is the DirectX SDK?</a></p>
+<p><a href="http://blogs.msdn.com/b/chuckw/archive/2013/07/01/where-is-the-directx-sdk-2013-edition.aspx">Where is the DirectX SDK (2013 Edition)?</a>&nbsp;</p>
+<p><a href="http://blogs.msdn.com/b/chuckw/archive/2013/09/14/dxut-for-win32-desktop-update.aspx">DXUT for Win32 Desktop Update</a></p>
+<p><a href="http://blogs.msdn.com/b/chuckw/archive/2012/10/24/effects-for-direct3d-11-update.aspx">Effects for Direct3D 11 Update</a></p>
+<p><a href="http://blogs.msdn.com/b/chuckw/">Games for Windows and DirectX SDK blog</a></p>
+
+</div>
+
+
+    </div>
+</body>
+</html>

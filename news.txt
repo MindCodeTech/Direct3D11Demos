@@ -1,0 +1,94 @@
+Direct3D11 win32 Demos Desktop samples (running with DXUT, Effects11, DirectXTK dll api)
+
+Direct3D11 = 
+	Basic DXUT Win32 Samples
+		= BasicHLSL11
+		= EmptyProject11
+		= SimpleSample11
+
+	Core Detection Sample
+		= CoreDetection
+
+	Direct3D 11 Install Helper
+		= D3D11InstallHelper
+		= D3D11Install
+
+	Direct3D Multithreaded Rendering Win32 Sample
+		= MultithreadedRendering11
+	
+	Direct3D Shadow Win32 Samples
+		= CascadedShadowMaps11
+		= VarianceShadows11
+
+	Direct3D Tessellation Win32 Samples
+		= SimpleBezier11
+		= SubD11
+
+	Direct3D Tutorial Win32 Sample
+		= Tutorial01
+		= Tutorial02
+		= Tutorial03
+		= Tutorial04
+		= Tutorial05
+		= Tutorial06
+		= Tutorial07
+
+	DirectCompute Basic Win32 Samples
+		= BasicCompute11
+		= ComputeShaderSort11
+
+	DirectCompute Graphics Win32 Samples
+		= AdaptiveTessellationCS40 	I can run this in my (hold) hardware :)
+		= FluidCS11
+		= HDRToneMappingCS11	   	I can run this in my (hold) hardware :)
+		= NBodyGravityCS11
+		= OIT11
+
+	DirectInput Samples
+		= CustomFormat
+		= FFConst
+		= Joystick
+
+	DirectX Video Memory
+		= VideoMemory
+
+	DXUT DirectXTK Simple Win32 Sample
+		= SimpleSampleTK
+
+	DXUT Tutorial Win32 Sample
+		= Tutorial08
+		= Tutorial09
+		= Tutorial10
+
+	Dynamic Shader Linkage Win32 Sample
+		= DynamicShaderLinkage11
+
+	Effects 11 Win32 Samples
+		= BasicHLSLFX11
+		= DynamicShaderLinkageFX11
+		= FixedFuncEMUFX11
+
+	Gameux Install Helper
+		= GameuxInstallHelper
+		= GDFInstall
+
+
+	getting ands audio and xinput demos
+====================================
+AMD Radeon SDK =
+			=pending
+			=
+
+====================================
+
+NVIDIA Direct3D SDK 11 =
+
+				=pending
+				=
+====================================
+
+Jorge Jimenez smaa and separable-sss= pendig
+
+				=pending
+				=
+====================================

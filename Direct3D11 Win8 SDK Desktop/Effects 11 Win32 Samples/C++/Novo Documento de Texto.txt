@@ -1,0 +1,13 @@
+using namespace D3DX11Effects;
+using namespace D3DX11Debug;
+using namespace Effects11;
+using namespace D3DX11Core;
+
+#ifndef _PCH_BUILD
+#define _PCH_BUILD
+#endif
+
+#include "pchfx.h"
+#undef _PCH_BUILD
+
+Error	1	error LNK2019: unresolved external symbol "__declspec(dllimport) long __stdcall D3DX11CompileEffectFromFile(wchar_t const *,struct _D3D_SHADER_MACRO const *,struct ID3DInclude *,unsigned int,unsigned int,struct ID3D11Device *,struct ID3DX11Effect * *,struct ID3D10Blob * *)" (__imp_?D3DX11CompileEffectFromFile@@YGJPB_WPBU_D3D_SHADER_MACRO@@PAUID3DInclude@@IIPAUID3D11Device@@PAPAUID3DX11Effect@@PAPAUID3D10Blob@@@Z) referenced in function "long __stdcall OnD3D11CreateDevice(struct ID3D11Device *,struct DXGI_SURFACE_DESC const *,void *)" (?OnD3D11CreateDevice@@YGJPAUID3D11Device@@PBUDXGI_SURFACE_DESC@@PAX@Z)	C:\MINDCODETECH\public_repos\DirectX\Direct3D11Demos\Direct3D11 Win8 SDK Desktop\Effects 11 Win32 Samples\C++\BasicHLSLFX11\BasicHLSLFX11.obj

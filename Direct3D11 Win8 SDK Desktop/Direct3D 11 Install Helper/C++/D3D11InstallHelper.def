@@ -1,0 +1,18 @@
+; D3D11InstallHelper.def
+;
+; defines the exported functions
+;
+ifdef _DEBUG
+LIBRARY    "D3D11InstallHelper_d"
+else
+LIBRARY    "D3D11InstallHelper"
+endif
+
+EXPORTS
+    CheckDirect3D11Status
+    DoUpdateForDirect3D11
+    CheckDirect3D11StatusIS
+    DoUpdateForDirect3D11IS
+    SetD3D11InstallMSIProperties
+    DoD3D11InstallUsingMSI
+    FinishD3D11InstallUsingMSI

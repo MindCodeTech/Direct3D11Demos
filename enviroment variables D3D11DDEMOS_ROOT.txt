@@ -1,0 +1,3 @@
+DXUT_ROOT = C:\your directory for\DXUT
+
+D3D11DEMOS_ROOT = C:\your directory for\Direct3D11Demos

@@ -1,0 +1,61 @@
+
+win32
+##################################
+
+demos exe
+
+release
+copy $(OutDir)$(TargetName)$(TargetExt) $(D3D11DEMOS_ROOT)\Bin32
+
+debug profile
+copy $(OutDir)$(TargetName)$(TargetExt) $(D3D11DEMOS_ROOT)\Bin32
+copy $(OutDir)$(TargetName).pdb $(D3D11DEMOS_ROOT)\Bin32
+###################################
+
+copy dxut dll's
+
+release
+copy $(OutDir)$(TargetName)$(TargetExt) $(D3D11DEMOS_ROOT)\Bin32
+copy $(DXUT_ROOT)\Bin32\DXUT.dll $(D3D11DEMOS_ROOT)\Bin32
+copy $(DXUT_ROOT)\Bin32\DXUT.dll $(D3D11DEMOS_ROOT)\Build_Demos
+
+debug
+copy $(OutDir)$(TargetName)$(TargetExt) $(D3D11DEMOS_ROOT)\Bin32
+copy $(OutDir)$(TargetName).pdb $(D3D11DEMOS_ROOT)\Bin32
+copy $(DXUT_ROOT)\Bin32\DXUT_d.dll $(D3D11DEMOS_ROOT)\Bin32
+copy $(DXUT_ROOT)\Bin32\DXUT_d.pdb $(D3D11DEMOS_ROOT)\Bin32
+copy $(DXUT_ROOT)\Bin32\DXUT_d.dll $(D3D11DEMOS_ROOT)\Build_Demos
+copy $(DXUT_ROOT)\Bin32\DXUT_d.pdb $(D3D11DEMOS_ROOT)\Build_Demos
+
+##############################################################################
+
+
+win64
+################################
+
+demos exe
+
+release
+copy $(OutDir)$(TargetName)$(TargetExt) $(D3D11DEMOS_ROOT)\Bin64
+################################
+
+debug profile
+copy $(OutDir)$(TargetName)$(TargetExt) $(D3D11DEMOS_ROOT)\Bin64
+copy $(OutDir)$(TargetName).pdb $(D3D11DEMOS_ROOT)\Bin64
+
+################################
+
+copy dxut dll's
+
+release
+copy $(OutDir)$(TargetName)$(TargetExt) $(D3D11DEMOS_ROOT)\Bin64
+copy $(DXUT_ROOT)\Bin64\DXUT.dll $(D3D11DEMOS_ROOT)\Bin64
+copy $(DXUT_ROOT)\Bin64\DXUT.dll $(D3D11DEMOS_ROOT)\Build_Demos64
+
+debug
+copy $(OutDir)$(TargetName)$(TargetExt) $(D3D11DEMOS_ROOT)\Bin64
+copy $(OutDir)$(TargetName).pdb $(D3D11DEMOS_ROOT)\Bin64
+copy $(DXUT_ROOT)\Bin64\DXUT_d.dll $(D3D11DEMOS_ROOT)\Bin64
+copy $(DXUT_ROOT)\Bin64\DXUT_d.pdb $(D3D11DEMOS_ROOT)\Bin64
+copy $(DXUT_ROOT)\Bin64\DXUT_d.dll $(D3D11DEMOS_ROOT)\Build_Demos64
+copy $(DXUT_ROOT)\Bin64\DXUT_d.pdb $(D3D11DEMOS_ROOT)\Build_Demos64

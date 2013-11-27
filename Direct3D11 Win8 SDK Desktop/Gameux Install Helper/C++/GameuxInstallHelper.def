@@ -1,0 +1,19 @@
+; GameuxInstallHelper.def
+;
+; defines the exported functions which will be available to the MSI engine
+;
+ifdef _DEBUG
+LIBRARY    "GameuxInstallHelper_d"
+else
+LIBRARY    "GameuxInstallHelper"
+endif
+EXPORTS
+    GameExplorerInstallUsingMSI
+    GameExplorerUninstallUsingMSI
+    GameExplorerSetMSIProperties
+    GameExplorerInstallA
+    GameExplorerInstallW
+    GameExplorerUninstallA
+    GameExplorerUninstallW
+    GameExplorerUpdateA
+    GameExplorerUpdateW
